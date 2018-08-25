@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="asos_black">#ff2d2d2d</color>
+    <color name="asos_black_dark">@android:color/black</color>
+    <color name="asos_black_light">#4d2d2d2d</color>
+    <color name="default_text_colour">@color/asos_black</color>
+    <color name="default_text_colour_light">@color/asos_black_light</color>
+</resources>

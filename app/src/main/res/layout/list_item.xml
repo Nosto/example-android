@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:background="?android:selectableItemBackground"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/itemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:text="@string/sample_title"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:paddingTop="25.0dip"
+            android:paddingRight="16.0dip"
+            android:paddingBottom="20.0dip"
+            style="@style/London"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/inline_element_padding"
+        android:paddingRight="@dimen/inline_element_padding"
+        android:clipToPadding="false"
+        android:orientation="horizontal" />
+
+</LinearLayout>

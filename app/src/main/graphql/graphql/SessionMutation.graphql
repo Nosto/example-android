@@ -1,0 +1,35 @@
+mutation SessionMutation($id: String!, $params: InputSessionParams) {
+  updateSession(id: $id, params: $params) {
+    customer {
+      firstName
+    }
+    recos(preview: false, image: VERSION_9_750_750) {
+      yx: toplist(hours: 96, sort: VIEWS, params: {
+        minProducts: 3,
+        maxProducts: 25
+       }) {
+        primary {
+          productId
+          name
+          price
+          listPrice
+          price
+          imageUrl
+        }
+      }
+      xx: toplist(hours: 168, sort: BUYS, params: {
+        minProducts: 3,
+        maxProducts: 25
+      }) {
+        primary {
+          productId
+          name
+          price
+          listPrice
+          price
+          imageUrl
+        }
+      }
+    }
+  }
+}
