@@ -1,6 +1,5 @@
 package com.nosto.graphql.adapters;
 
-import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,18 +10,15 @@ import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.nosto.graphql.R;
-import com.nosto.graphql.SingleItemModel;
 
 import java.util.List;
 
 public class SectionListDataAdapter extends RecyclerView.Adapter<SectionListDataAdapter.SingleItemRowHolder> {
 
     private List<SingleItemModel> itemsList;
-    private Context mContext;
 
-    public SectionListDataAdapter(Context context, List<SingleItemModel> itemsList) {
+    public SectionListDataAdapter(List<SingleItemModel> itemsList) {
         this.itemsList = itemsList;
-        this.mContext = context;
     }
 
     @Override

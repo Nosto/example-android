@@ -9,7 +9,6 @@ public class MoneyUtils {
 
     public static String getFormattedCurrencyString(String isoCurrencyCode, double amount) {
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-
         Currency currency = Currency.getInstance(isoCurrencyCode);
 
         String symbol;
@@ -22,7 +21,6 @@ public class MoneyUtils {
         DecimalFormatSymbols decimalFormatSymbols = ((java.text.DecimalFormat) currencyFormat).getDecimalFormatSymbols();
         decimalFormatSymbols.setCurrencySymbol(symbol);
         ((java.text.DecimalFormat) currencyFormat).setDecimalFormatSymbols(decimalFormatSymbols);
-
         return currencyFormat.format(amount);
     }
 }

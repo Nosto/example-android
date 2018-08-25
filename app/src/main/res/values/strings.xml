@@ -2,4 +2,6 @@
     <string name="app_name">GraphQL</string>
     <string name="more">more</string>
     <string name="sample_title">Sample title</string>
+    <string name="popular_right_now">Popular Right Now</string>
+    <string name="you_might_like">You Might Also Like</string>
 </resources>

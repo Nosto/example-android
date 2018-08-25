@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
-public class NostoGraphQL extends Application {
+public class MainApp extends Application {
 
     @Override
     public void onCreate() {
