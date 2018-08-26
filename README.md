@@ -6,13 +6,13 @@ GraphQL is a query language for you API, that gives clients the power to ask for
 
 
 
-###Recommended Reading
+### Recommended Reading
 
 https://github.com/apollographql/apollo-android/blob/master/README.md
 
 
 
-### **GraphQL on Android**
+### GraphQL on Android
 
 Let’s explore how we can consume GraphQL API’s on Android. Although there are multiple client libraries for the web, so far there is only one GraphQL client for Android [Apollo](https://github.com/apollographql/apollo-android).
 
@@ -31,7 +31,7 @@ Now we know what is GraphQL and how Apollo Android works let’s see how we can 
 
 Create an empty android project if you don’t already have one. 
 
-####Project Level Changes
+#### Project Level Changes
 
 Now in your project level **build.gradle** file add this line
 
@@ -47,7 +47,7 @@ apply plugin: 'com.apollographql.android'
 
 this should go below **com.android.application,** if you want to use apollo for your Kotlin project, add apollo plugin before you kotlin plugin. With these 2 dependencies, we've added automatic code generation to our build toolchain.
 
-####Module Level Changes
+#### Module Level Changes
 
 In your module-level **build.gradle** add the following two dependencies using the given lines:
 
@@ -127,7 +127,7 @@ public class BasicAuthInterceptor implements Interceptor {
 }
 ```
 
-#####Adding Debugging Support
+##### Adding Debugging Support
 
 When consuming Nosto's GraphQL API, it is important that your test queries and mutations do not affect the data in Nosto account.
 
@@ -167,7 +167,7 @@ public class DebugModeInterceptor implements Interceptor {
 
 
 
-#####Adding Caching Support (Optional)
+##### Adding Caching Support (Optional)
 
 If you want to enable caching, Apollo comes with 3 level of cache, read more about caching here <https://github.com/apollographql/apollo-android>. Now we have the OkHttp Client and Cache, we can construct the Apollo client object.
 
