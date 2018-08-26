@@ -10,16 +10,6 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-/**
- * Simple interceptor class that adds a adds a custom header called X-Nosto-Ignore to the request.
- * When the app is a of a debug build, the header is added and the request is not logged in Nosto.
- * This allows you to build an application against your production Nosto account without polluting
- * the data.
- * <p>
- * https://developer.nosto.com/#authentication
- *
- * @author mridang
- */
 public class DebugModeInterceptor implements Interceptor {
 
     @Override
