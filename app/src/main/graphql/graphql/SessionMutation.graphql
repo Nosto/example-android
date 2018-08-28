@@ -13,7 +13,7 @@ mutation SessionMutation($id: String!, $params: InputSessionParams) {
           name
           price
           listPrice
-          price
+          currencyCode
           imageUrl
         }
       }
@@ -26,10 +26,11 @@ mutation SessionMutation($id: String!, $params: InputSessionParams) {
           name
           price
           listPrice
-          price
+          currencyCode
           imageUrl
         }
       }
     }
   }
 }
+

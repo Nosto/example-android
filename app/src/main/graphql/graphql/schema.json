@@ -274,6 +274,18 @@
               "deprecationReason": null
             },
             {
+              "name": "listPriceText",
+              "description": "The formatted list price of the product.",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "name",
               "description": "The name of the product",
               "args": [],
@@ -300,6 +312,18 @@
             {
               "name": "currencyCode",
               "description": "The currency code of the product",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "priceText",
+              "description": "The formatted price of the product. The price of the product is the lowest price of all it's available variants",
               "args": [],
               "type": {
                 "kind": "SCALAR",
@@ -1476,6 +1500,16 @@
                     }
                   },
                   "defaultValue": null
+                },
+                {
+                  "name": "currency",
+                  "description": "The three letter currency code in which you want the prices to be formatted. A corresponding currency",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "CurrencyParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
                 }
               ],
               "type": {
@@ -1937,6 +1971,989 @@
           "possibleTypes": null
         },
         {
+          "kind": "ENUM",
+          "name": "CurrencyParams",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "AED",
+              "description": "AED",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AFN",
+              "description": "AFN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ALL",
+              "description": "ALL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AMD",
+              "description": "AMD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ANG",
+              "description": "ANG",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AOA",
+              "description": "AOA",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ARS",
+              "description": "ARS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AUD",
+              "description": "AUD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AWG",
+              "description": "AWG",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "AZN",
+              "description": "AZN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BAM",
+              "description": "BAM",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BBD",
+              "description": "BBD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BDT",
+              "description": "BDT",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BGN",
+              "description": "BGN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BHD",
+              "description": "BHD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BIF",
+              "description": "BIF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BMD",
+              "description": "BMD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BND",
+              "description": "BND",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BOB",
+              "description": "BOB",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BRL",
+              "description": "BRL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BSD",
+              "description": "BSD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BTN",
+              "description": "BTN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BWP",
+              "description": "BWP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BYR",
+              "description": "BYR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BZD",
+              "description": "BZD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CAD",
+              "description": "CAD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CDF",
+              "description": "CDF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CHF",
+              "description": "CHF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CLP",
+              "description": "CLP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CNY",
+              "description": "CNY",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "COP",
+              "description": "COP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CRC",
+              "description": "CRC",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CUC",
+              "description": "CUC",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CUP",
+              "description": "CUP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CVE",
+              "description": "CVE",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "CZK",
+              "description": "CZK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DJF",
+              "description": "DJF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DKK",
+              "description": "DKK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DOP",
+              "description": "DOP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "DZD",
+              "description": "DZD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "EGP",
+              "description": "EGP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ERN",
+              "description": "ERN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ETB",
+              "description": "ETB",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "EUR",
+              "description": "EUR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "FJD",
+              "description": "FJD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "FKP",
+              "description": "FKP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GBP",
+              "description": "GBP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GEL",
+              "description": "GEL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GGP",
+              "description": "GGP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GHS",
+              "description": "GHS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GIP",
+              "description": "GIP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GMD",
+              "description": "GMD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GNF",
+              "description": "GNF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GTQ",
+              "description": "GTQ",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "GYD",
+              "description": "GYD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "HKD",
+              "description": "HKD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "HNL",
+              "description": "HNL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "HRK",
+              "description": "HRK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "HTG",
+              "description": "HTG",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "HUF",
+              "description": "HUF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "IDR",
+              "description": "IDR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ILS",
+              "description": "ILS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "IMP",
+              "description": "IMP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "INR",
+              "description": "INR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "IQD",
+              "description": "IQD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "IRR",
+              "description": "IRR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ISK",
+              "description": "ISK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "JEP",
+              "description": "JEP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "JMD",
+              "description": "JMD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "JOD",
+              "description": "JOD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "JPY",
+              "description": "JPY",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KES",
+              "description": "KES",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KGS",
+              "description": "KGS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KHR",
+              "description": "KHR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KMF",
+              "description": "KMF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KPW",
+              "description": "KPW",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KRW",
+              "description": "KRW",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KWD",
+              "description": "KWD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KYD",
+              "description": "KYD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "KZT",
+              "description": "KZT",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LAK",
+              "description": "LAK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LBP",
+              "description": "LBP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LKR",
+              "description": "LKR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LRD",
+              "description": "LRD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LSL",
+              "description": "LSL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "LYD",
+              "description": "LYD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MAD",
+              "description": "MAD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MDL",
+              "description": "MDL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MGA",
+              "description": "MGA",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MKD",
+              "description": "MKD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MMK",
+              "description": "MMK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MNT",
+              "description": "MNT",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MOP",
+              "description": "MOP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MRO",
+              "description": "MRO",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MUR",
+              "description": "MUR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MVR",
+              "description": "MVR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MWK",
+              "description": "MWK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MXN",
+              "description": "MXN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MYR",
+              "description": "MYR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "MZN",
+              "description": "MZN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NAD",
+              "description": "NAD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NGN",
+              "description": "NGN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NIO",
+              "description": "NIO",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NOK",
+              "description": "NOK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NPR",
+              "description": "NPR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "NZD",
+              "description": "NZD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "OMR",
+              "description": "OMR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PAB",
+              "description": "PAB",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PEN",
+              "description": "PEN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PGK",
+              "description": "PGK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PHP",
+              "description": "PHP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PKR",
+              "description": "PKR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PLN",
+              "description": "PLN",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "PYG",
+              "description": "PYG",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "QAR",
+              "description": "QAR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "RON",
+              "description": "RON",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "RSD",
+              "description": "RSD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "RUB",
+              "description": "RUB",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "RWF",
+              "description": "RWF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SAR",
+              "description": "SAR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SBD",
+              "description": "SBD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SCR",
+              "description": "SCR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SDG",
+              "description": "SDG",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SEK",
+              "description": "SEK",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SGD",
+              "description": "SGD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SHP",
+              "description": "SHP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SLL",
+              "description": "SLL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SOS",
+              "description": "SOS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SPL",
+              "description": "SPL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SRD",
+              "description": "SRD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "STD",
+              "description": "STD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SVC",
+              "description": "SVC",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SYP",
+              "description": "SYP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "SZL",
+              "description": "SZL",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "THB",
+              "description": "THB",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TJS",
+              "description": "TJS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TMT",
+              "description": "TMT",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TND",
+              "description": "TND",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TOP",
+              "description": "TOP",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TRY",
+              "description": "TRY",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TTD",
+              "description": "TTD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TVD",
+              "description": "TVD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TWD",
+              "description": "TWD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "TZS",
+              "description": "TZS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UAH",
+              "description": "UAH",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UGX",
+              "description": "UGX",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "USD",
+              "description": "USD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UYU",
+              "description": "UYU",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "UZS",
+              "description": "UZS",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "VEF",
+              "description": "VEF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "VND",
+              "description": "VND",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "VUV",
+              "description": "VUV",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "WST",
+              "description": "WST",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "XAF",
+              "description": "XAF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "XCD",
+              "description": "XCD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "XDR",
+              "description": "XDR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "XOF",
+              "description": "XOF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "XPF",
+              "description": "XPF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "YER",
+              "description": "YER",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ZAR",
+              "description": "ZAR",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ZMW",
+              "description": "ZMW",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "ZWD",
+              "description": "ZWD",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
+          "possibleTypes": null
+        },
+        {
           "kind": "OBJECT",
           "name": "Event",
           "description": "An object used for denoting an interaction event such as product view or a search",
@@ -2010,6 +3027,16 @@
               "description": null,
               "args": [
                 {
+                  "name": "by",
+                  "description": null,
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "LookupParams",
+                    "ofType": null
+                  },
+                  "defaultValue": null
+                },
+                {
                   "name": "id",
                   "description": null,
                   "type": {
@@ -2046,6 +3073,29 @@
           "inputFields": null,
           "interfaces": [],
           "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "ENUM",
+          "name": "LookupParams",
+          "description": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": [
+            {
+              "name": "BY_REF",
+              "description": "BY_REF",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "BY_CID",
+              "description": "BY_CID",
+              "isDeprecated": false,
+              "deprecationReason": null
+            }
+          ],
           "possibleTypes": null
         },
         {
