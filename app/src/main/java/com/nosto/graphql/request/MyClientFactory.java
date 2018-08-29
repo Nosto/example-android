@@ -9,7 +9,7 @@ import okhttp3.OkHttpClient.Builder;
 
 public class MyClientFactory {
 
-    private static final String TOKEN = "5VsztSfLhrGDXOsbs1ZqMHWgBOwICfmhIWCocVRICaSDeUMF9kQ3mz4oSxl76jUE";
+    private static final String TOKEN = "";
 
     private MyClientFactory() {
     }

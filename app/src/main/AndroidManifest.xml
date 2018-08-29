@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:name=".MainApp"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:value="5VsztSfLhrGDXOsbs1ZqMHWgBOwICfmhIWCocVRICaSDeUMF9kQ3mz4oSxl76jUE"
-            android:name="nosto" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
